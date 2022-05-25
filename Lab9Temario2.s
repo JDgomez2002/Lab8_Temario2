@@ -28,7 +28,7 @@ i:	 	 .int	0
 delayMs: .int	500
 delayMs2: .int	800
 OUTPUT	 =	1
-INPUT	 =	1
+INPUT	 =	0
 
 @ ---------------------------------------
 @	Code Section
@@ -182,62 +182,7 @@ estado1:
 	ldr	r0, [r0]
 	bl	delay
 
-    @WIRINGPI PIN 0
-	ldr	r0, = pin0				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 1
-	ldr	r0, = pin1				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 2
-	ldr	r0, = pin2				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 3
-	ldr	r0, = pin3				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 4
-	ldr	r0, = pin4				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 5
-	ldr	r0, = pin5				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 6
-	ldr	r0, = pin6				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 7
-	ldr	r0, = pin7				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @---------------------------------------------
-    @DELAY OFF 
-    @---------------------------------------------
-	ldr	r0, =delayMs
-	ldr	r0, [r0]
-	bl	delay
-
-    b estado2
+	b estado2
 
 @---------------------------------------****-------------------------------------------------    
 @------------------------------------   ESTADO 2 --------------------------------------------
@@ -303,57 +248,14 @@ estado2:
 	mov	r1, #1
 	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
 
+    @WIRINGPI PIN 7
+	ldr	r0, = pin7				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
     @---------------------------------------------
     @DELAY ON 
-    @---------------------------------------------
-	ldr	r0, =delayMs
-	ldr	r0, [r0]
-	bl	delay
-
-    @WIRINGPI PIN 0
-	ldr	r0, = pin0				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 1
-	ldr	r0, = pin1				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 2
-	ldr	r0, = pin2				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 3
-	ldr	r0, = pin3				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 4
-	ldr	r0, = pin4				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 5
-	ldr	r0, = pin5				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 6
-	ldr	r0, = pin6				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @---------------------------------------------
-    @DELAY OFF 
     @---------------------------------------------
 	ldr	r0, =delayMs
 	ldr	r0, [r0]
@@ -419,51 +321,20 @@ estado3:
 	mov	r1, #1
 	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
 
+    @WIRINGPI PIN 6
+	ldr	r0, = pin6				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 7
+	ldr	r0, = pin7				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
     @---------------------------------------------
     @DELAY ON 
-    @---------------------------------------------
-	ldr	r0, =delayMs
-	ldr	r0, [r0]
-	bl	delay
-
-    @WIRINGPI PIN 0
-	ldr	r0, = pin0				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 1
-	ldr	r0, = pin1				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 2
-	ldr	r0, = pin2				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 3
-	ldr	r0, = pin3				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 4
-	ldr	r0, = pin4				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 5
-	ldr	r0, = pin5				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @---------------------------------------------
-    @DELAY OFF 
     @---------------------------------------------
 	ldr	r0, =delayMs
 	ldr	r0, [r0]
@@ -523,6 +394,24 @@ estado4:
 	mov	r1, #1
 	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
 
+    @WIRINGPI PIN 5
+	ldr	r0, = pin5				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 6
+	ldr	r0, = pin6				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 7
+	ldr	r0, = pin7				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
     @---------------------------------------------
     @DELAY ON 
     @---------------------------------------------
@@ -530,42 +419,7 @@ estado4:
 	ldr	r0, [r0]
 	bl	delay
 
-    @WIRINGPI PIN 0
-	ldr	r0, = pin0				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 1
-	ldr	r0, = pin1				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 2
-	ldr	r0, = pin2				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 3
-	ldr	r0, = pin3				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 4
-	ldr	r0, = pin4				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @---------------------------------------------
-    @DELAY OFF 
-    @---------------------------------------------
-	ldr	r0, =delayMs
-	ldr	r0, [r0]
-	bl	delay
+	b estado5
 
 @---------------------------------------****-------------------------------------------------    
 @------------------------------------   ESTADO 5 --------------------------------------------
@@ -613,39 +467,32 @@ estado5:
 	mov	r1, #1
 	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
 
+    @WIRINGPI PIN 4
+	ldr	r0, = pin4				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 5
+	ldr	r0, = pin5				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 6
+	ldr	r0, = pin6				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 7
+	ldr	r0, = pin7				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
     @---------------------------------------------
     @DELAY ON 
-    @---------------------------------------------
-	ldr	r0, =delayMs
-	ldr	r0, [r0]
-	bl	delay
-
-    @WIRINGPI PIN 0
-	ldr	r0, = pin0				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 1
-	ldr	r0, = pin1				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 2
-	ldr	r0, = pin2				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 3
-	ldr	r0, = pin3				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @---------------------------------------------
-    @DELAY OFF 
     @---------------------------------------------
 	ldr	r0, =delayMs
 	ldr	r0, [r0]
@@ -693,33 +540,38 @@ estado6:
 	mov	r1, #1
 	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
 
+    @WIRINGPI PIN 3
+	ldr	r0, = pin3				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 4
+	ldr	r0, = pin4				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 5
+	ldr	r0, = pin5				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 6
+	ldr	r0, = pin6				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 7
+	ldr	r0, = pin7				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
     @---------------------------------------------
     @DELAY ON 
-    @---------------------------------------------
-	ldr	r0, =delayMs
-	ldr	r0, [r0]
-	bl	delay
-
-    @WIRINGPI PIN 0
-	ldr	r0, = pin0				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 1
-	ldr	r0, = pin1				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 2
-	ldr	r0, = pin2				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @---------------------------------------------
-    @DELAY OFF 
     @---------------------------------------------
 	ldr	r0, =delayMs
 	ldr	r0, [r0]
@@ -761,27 +613,44 @@ estado7:
 	mov	r1, #1
 	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
 
+    @WIRINGPI PIN 2
+	ldr	r0, = pin2				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 3
+	ldr	r0, = pin3				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 4
+	ldr	r0, = pin4				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 5
+	ldr	r0, = pin5				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 6
+	ldr	r0, = pin6				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 7
+	ldr	r0, = pin7				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
     @---------------------------------------------
     @DELAY ON 
-    @---------------------------------------------
-	ldr	r0, =delayMs
-	ldr	r0, [r0]
-	bl	delay
-
-    @WIRINGPI PIN 0
-	ldr	r0, = pin0				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @WIRINGPI PIN 1
-	ldr	r0, = pin1				// carga dirección de pin
-	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
-	mov	r1, #0
-	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
-
-    @---------------------------------------------
-    @DELAY OFF 
     @---------------------------------------------
 	ldr	r0, =delayMs
 	ldr	r0, [r0]
@@ -817,21 +686,50 @@ estado8:
 	mov	r1, #1
 	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
 
-    @---------------------------------------------
-    @DELAY ON 
-    @---------------------------------------------
-	ldr	r0, =delayMs
-	ldr	r0, [r0]
-	bl	delay
+    @WIRINGPI PIN 1
+	ldr	r0, = pin1				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
 
-    @WIRINGPI PIN 0
-	ldr	r0, = pin0				// carga dirección de pin
+    @WIRINGPI PIN 2
+	ldr	r0, = pin2				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 3
+	ldr	r0, = pin3				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 4
+	ldr	r0, = pin4				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 5
+	ldr	r0, = pin5				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 6
+	ldr	r0, = pin6				// carga dirección de pin
+	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
+	mov	r1, #0
+	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
+
+    @WIRINGPI PIN 7
+	ldr	r0, = pin7				// carga dirección de pin
 	ldr	r0, [r0]				// operaciones anteriores borraron valor de pin en r0
 	mov	r1, #0
 	bl 	digitalWrite			// escribe 1 en pin para activar puerto GPIO
 
     @---------------------------------------------
-    @DELAY OFF 
+    @DELAY ON 
     @---------------------------------------------
 	ldr	r0, =delayMs
 	ldr	r0, [r0]
